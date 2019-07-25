@@ -1,18 +1,16 @@
 package com.xzq.module_base.adapter;
 
+import am.widget.stateframelayout.StateFrameLayout;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.xzq.module_base.R;
 
 import java.lang.ref.SoftReference;
 import java.util.List;
-
-import am.widget.stateframelayout.StateFrameLayout;
 
 /**
  * 列表适配器基类，带加载更多功能
@@ -98,7 +96,7 @@ public class BaseRecyclerFooterAdapter<T>
                 if (loadMoreCallback != null && !isLoadingMore) {
                     isLoadingMore = true;
                     sflLoadMore.loading();
-                    loadMoreCallback.onAutoLoadMore(sflLoadMore);
+                    loadMoreCallback.onAutoLoadMore();
                 }
             } else {
                 sflLoadMore.empty();
@@ -190,7 +188,7 @@ public class BaseRecyclerFooterAdapter<T>
             layout.loading();
         }
         if (loadMoreCallback != null) {
-            loadMoreCallback.onReloadMore(layout);
+            loadMoreCallback.onReloadMore();
         }
     }
 
@@ -204,14 +202,14 @@ public class BaseRecyclerFooterAdapter<T>
          *
          * @param loadMore StateFrameLayout
          */
-        void onAutoLoadMore(StateFrameLayout loadMore);
+        void onAutoLoadMore();
 
         /**
          * 点击重新加载更多
          *
          * @param loadMore StateFrameLayout
          */
-        void onReloadMore(StateFrameLayout loadMore);
+        void onReloadMore();
 
     }
 

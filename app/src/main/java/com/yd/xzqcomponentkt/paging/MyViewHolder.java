@@ -20,8 +20,8 @@ public class MyViewHolder extends BaseRecyclerViewHolder<HomePageBean> {
 
     @Override
     public void setData(HomePageBean data) {
-        tv.setTag(data.link);
-        tv.setText(position + "\t" + data.title + "\t" + data.niceDate);
+        tv.setTag(data.getLink());
+        tv.setText(position + "\t" + data.getTitle() + "\t" + data.getNiceDate());
     }
 }
 

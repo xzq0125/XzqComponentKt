@@ -18,7 +18,7 @@ public class LoginInterceptor implements IInterceptor {
     @Override
     public void process(Postcard postcard, InterceptorCallback callback) {
         String group = postcard.getGroup();
-        boolean needLogin = LoginPath.isLoginGroup(group) && !User.isLogin();
+        boolean needLogin = LoginPath.isLoginGroup(group) && !User.INSTANCE.isLogin();
         if (needLogin) {
             callback.onInterrupt(null);
             RouterUtils.openLogin();

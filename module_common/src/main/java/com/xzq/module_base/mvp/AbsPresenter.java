@@ -1,18 +1,12 @@
 package com.xzq.module_base.mvp;
 
 import android.support.annotation.NonNull;
-
-import com.xzq.module_base.api.ApiCallback;
-import com.xzq.module_base.api.BaseListBean;
-import com.xzq.module_base.api.ModelService;
-import com.xzq.module_base.api.NetBean;
-import com.xzq.module_base.api.NetCallback;
-
-import java.util.List;
-
+import com.xzq.module_base.api.*;
 import io.reactivex.Observable;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+
+import java.util.List;
 
 
 /**

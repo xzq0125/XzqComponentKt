@@ -1,6 +1,4 @@
-package com.xzq.module_base.mvp;
-
-import java.util.List;
+package com.xzq.module_base.mvp
 
 /**
  * 网络响应以列表形式返回
@@ -8,7 +6,7 @@ import java.util.List;
  *
  * @author xzq
  */
-public interface IListView<Entity> {
+interface IListView<Entity> {
 
     /**
      * 设置数据
@@ -17,7 +15,7 @@ public interface IListView<Entity> {
      * @param hasNextPage 是否有下一页列表
      * @param totalCount  总数量
      */
-    void setData(List<Entity> list, int page, boolean hasNextPage, int totalCount);
+    fun setData(list: List<Entity>, page: Int, hasNextPage: Boolean, totalCount: Int)
 
     /**
      * 追加数据
@@ -26,5 +24,5 @@ public interface IListView<Entity> {
      * @param hasNextPage 是否有下一页列表
      * @param totalCount  总数量
      */
-    void addData(List<Entity> list, int page, boolean hasNextPage, int totalCount);
+    fun addData(list: List<Entity>, page: Int, hasNextPage: Boolean, totalCount: Int)
 }

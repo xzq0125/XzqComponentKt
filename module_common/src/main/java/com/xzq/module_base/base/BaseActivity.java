@@ -66,7 +66,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
         } else {
             overridePendingTransition(R.anim.activity_open_enter, R.anim.activity_open_exit);
         }
-        EventUtil.register(this);
+        EventUtil.INSTANCE.register(this);
         final int layoutId = getLayoutId();
         ViewGroup contentParent = findViewById(android.R.id.content);
         View contentView = LayoutInflater.from(this)
@@ -151,7 +151,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EventUtil.unregister(this);
+        EventUtil.INSTANCE.unregister(this);
         mState = ActivityState.DESTROY;
         if (unbinder != null) {
             unbinder.unbind();

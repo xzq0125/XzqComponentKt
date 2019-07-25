@@ -17,7 +17,7 @@ public class RXMVPActivity extends BaseListActivity<MvpContract.CommonPresenter,
     protected MvpContract.RXMVPPresenter createPresenter() {
         if (NetCallback.FIRST_PAGE_INDEX == 335) {
             stateConfig.loadingLayoutId = R.layout.layout_common_loading_custom;
-        }else if (NetCallback.FIRST_PAGE_INDEX==10001){
+        } else if (NetCallback.FIRST_PAGE_INDEX == 10001) {
             stateConfig.emptyLayoutId = R.layout.layout_common_empty_custom;
         }
         return new MvpContract.RXMVPPresenter();
@@ -30,7 +30,7 @@ public class RXMVPActivity extends BaseListActivity<MvpContract.CommonPresenter,
 
     @Override
     protected RecyclerView.Adapter getPageAdapter() {
-        return new MyAdapter().setOnItemClickListener((v, data, pos) -> ToastUtils.showShort(data.title + pos));
+        return new MyAdapter().setOnItemClickListener((v, data, pos) -> ToastUtils.showShort(data.getTitle() + pos));
     }
 
 }

@@ -54,7 +54,7 @@ public abstract class BaseFragment extends Fragment implements
     public void onCreate(Bundle savedInstanceState) {
         mState = FragmentState.CREATE;
         me = getActivity();
-        EventUtil.register(this);
+        EventUtil.INSTANCE.register(this);
         super.onCreate(savedInstanceState);
     }
 
@@ -86,7 +86,7 @@ public abstract class BaseFragment extends Fragment implements
     public void onDestroy() {
         mState = FragmentState.DESTROY;
         super.onDestroy();
-        EventUtil.unregister(this);
+        EventUtil.INSTANCE.unregister(this);
     }
 
     @Override
